@@ -1,9 +1,11 @@
+"""Predefined heroes for the tactical battle."""
+
 from unit import Unit
 from constants import PLAYER_COLOR
 
 
-def create_players():
-    """Return a list with three player units."""
+def create_players() -> list[Unit]:
+    """Create three default player units."""
     return [
         Unit(
             name="Alena",
