@@ -1,8 +1,10 @@
+"""Factory for the default enemy troops."""
+
 from unit import Unit
 from constants import ENEMY_COLOR, COLS_PER_SIDE
 
 
-def create_enemies():
+def create_enemies() -> list[Unit]:
     """Return a list with enemy units."""
     return [
         Unit(
