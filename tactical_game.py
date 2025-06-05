@@ -1,6 +1,5 @@
 import pygame
 
-
 from constants import (
     CELL_SIZE,
     COLS_PER_SIDE,
@@ -16,6 +15,7 @@ from constants import (
 from unit import Unit
 from players import create_players
 from enemies import create_enemies
+
 
 # Constants
 CELL_SIZE = 64
@@ -49,6 +49,7 @@ class Unit:
 
 
 
+
 def draw_grid(surface):
     for row in range(ROWS):
         for col in range(COLS_PER_SIDE * 2):
@@ -66,12 +67,14 @@ def main():
     players = create_players()
     enemies = create_enemies()
 
+
     players = [
         Unit("Hero1", 10, 5, 30, 10, (1, 0), PLAYER_COLOR),
         Unit("Hero2", 8, 6, 25, 10, (1, 1), PLAYER_COLOR),
         Unit("Hero3", 9, 4, 20, 10, (1, 2), PLAYER_COLOR),
     ]
     enemy = Unit("Enemy", 12, 5, 35, 10, (COLS_PER_SIDE + 3, 1), ENEMY_COLOR)
+
 
 
     clock = pygame.time.Clock()
@@ -88,8 +91,6 @@ def main():
 
         for e in enemies:
             e.draw(screen)
-
-        enemy.draw(screen)
 
         pygame.display.flip()
         clock.tick(30)
